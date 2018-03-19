@@ -1,0 +1,128 @@
+// Custom GC Typography
+
+@mixin titulo-1 {
+    font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 900;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+        font-size: 90px;
+        line-height: 90px;
+    }
+}
+
+@mixin titulo-2 {
+	font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @include media-breakpoint-up(lg) {
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
+
+@mixin titulo-3 {
+	font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 900;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+        font-size: 40px;
+        line-height: 45px;
+    }
+}
+
+@mixin titulo-4 {
+	font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 900;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+
+@mixin texto-medio {
+    font-family: "nimbus-sans", "Helvetica", sans-serif;
+	font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+
+@mixin texto-pequeno {
+    font-family: "nimbus-sans", "Helvetica", sans-serif;
+	font-size: 16px;
+    line-height: 20px;
+	font-weight: 400;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+        font-weight: 300;
+    }
+}
+
+h1, .h1 { @include titulo-1; }
+
+h2, .h2 { @include titulo-2; }
+
+h3, .h3 { @include titulo-3; }
+
+h4, .h4 { @include titulo-4; }
+
+p, li, .texto-medio { @include texto-medio; }
+
+.texto-pequeno { @include texto-pequeno; }
+
+figcaption, input, textarea, .form-control { @include texto-pequeno; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+	&:first-child {
+    	margin-top: 0
+    }
+}
+
+*::selection {
+    background-color: $preto;
+    color: $branco;
+}
+
+h1, .h1 {
+	text-align: left;
+}
+
+h2, .h2, h3, .h3, h4, .h4 {
+	text-align: left;
+}
+
+blockquote, figcaption { 
+	font-style: italic;
+	text-align: center;
+}
+
+figure {
+	background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p, li {
+    color: $branco;
+}
+
+strong {
+    font-weight: $bold;
+}

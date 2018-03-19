@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 150%;
+  font-family: "nimbus-sans";
+  background-color: $branco;
+}
+
+body {
+  font-family: "nimbus-sans";
+  font-weight: 200;
+  font-style: normal;
+  background-color: $branco;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+li {
+  list-style-type: none;
+}

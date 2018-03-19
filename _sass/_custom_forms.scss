@@ -1,0 +1,33 @@
+// Custom GC form styles
+
+//
+// Textual form controls
+//
+
+.form-control {
+  @include form-control-placeholder(); 
+  @include texto-pequeno;
+}
+
+input {
+  &.form-control {
+    height: 38px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: $input-btn-border-width solid rgba($input-border-color, 0.3);
+    padding-left: 28px;
+    padding-right: 0;
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+textarea {
+  &.form-control {
+    background-color: transparent;
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}

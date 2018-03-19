@@ -1,0 +1,66 @@
+// Variables
+//
+
+//
+// Color system
+//
+
+// cores da parabólica
+$branco: #ffffff;
+$preto: #000000;
+
+$custom_primary:       $preto !default;
+$custom_secondary:     $preto !default;
+
+// Custom widths for custom containers
+$container-fluid-widths: (
+  sm: 100%,
+  md: 91.6666666666%,
+  lg: 83.3333333333%,
+  xl: 80%
+) !default;
+
+// Set the number of columns and specify the width of the gutters.
+$custom_grid-columns:				$site-grid;
+$custom_grid-gutter-width:          20px;
+
+// Components
+//
+// Define common border radius sizes.
+$custom_border-radius:               5px;
+$custom_border-radius-lg:            5px;
+$custom_border-radius-sm:            5px;
+
+// original value: height .35s ease !default;
+$custom_transition-collapse: height .35s ease-in-out !default;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$custom_font-family-sans-serif:      "nimbus-sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$custom_font-size-base:              .6666666666rem;
+$custom_font-weight-light:           300;
+$custom_font-weight-normal:          400;
+$custom_font-weight-bold:            700;
+
+$custom_btn-font-weight: 800;
+
+$thin:		200;
+$light: 	300;
+$regular:	400;
+$medium:	500;
+$bold:		700;
+$black:		800;
+
+// Forms
+//
+$custom_input-color:                           $branco;
+$custom_input-focus-border-color:              $branco;
+$custom_input-btn-border-width:                2px;
+
+$component-mobile-margin-bottom: 2rem;
+$component-desktop-margin-bottom: 4rem;
+
+$custom_button-outline: none;
+
+$custom_dropdown-link-active-color: $branco;

@@ -3,9 +3,10 @@ email: parabolica.studio@gmail.com
 description: >
   Coletivo de design brasiliense
 baseurl: ""
-url: "https://parabolica-design.github.io"
+url: "http://parabolica.design"
 permalink: pretty
 assets: "/assets" 
 markdown: kramdown
 sass:
   style: compressed
+grid: 24

@@ -1,0 +1,11 @@
+/// Custom GC Grid System
+
+// Creates fluid containers with responsive percentage based widths
+@mixin make-fluid-container($widths: $container-fluid-widths, $breakpoints: $grid-breakpoints) {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}

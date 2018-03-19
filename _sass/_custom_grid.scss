@@ -1,0 +1,7 @@
+// Custom GG fluid container
+
+@if $enable-grid-classes {
+  .pb-container {
+    @include make-fluid-container();
+  }
+}

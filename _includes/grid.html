@@ -1,0 +1,14 @@
+<section id="grid" class="pb-container">
+	<div class="row">
+		{% for i in (1..{{site.grid}}) %}
+			<div class="column col-2 col-md-1"><div></div></div>
+		{% endfor %}
+	</div>
+	<div class="botao"><a href="" onclick="toggleGrid();return false"></a></div>
+</section>
+
+<script type="text/javascript">
+	function toggleGrid() {
+		$("#grid").toggleClass("show");
+	}
+</script>
