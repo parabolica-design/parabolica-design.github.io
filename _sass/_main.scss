@@ -7,7 +7,10 @@ html, body {
 body {
 	main {
 		height: 100%;
-		.capa {
+		.fp-scroller {
+			height: 100%;
+		}
+		.home {
 			background-color: $indigo;
 			height: calc(100% - 72px);
 			.row {
@@ -68,9 +71,12 @@ body {
 					background-size: 1px 5px;
 					background-repeat: repeat-y;
 					color: rgba($branco, .5);
-					&:first-child {
+					cursor: pointer;
+					&.selecionado {
 						color: rgba($branco, 1);
 						font-weight: 900;
+					}
+					&:first-child {
 						background-image: none;
 					}
 					@include media-breakpoint-up(md) {
@@ -78,80 +84,100 @@ body {
 					}
 				}
 			}
-			.conteudo {
-				height: 100%;
-				display: flex;
-				flex-flow: row nowrap;
-				.info {
-					width: 48px;
-					border-right: 1px solid $branco;
-					transition: width .25s ease;
-					position: absolute;
-					background-color: $preto;
-					height: calc(100% - 72px);
-					&:hover {
-						width: 100% / 24 * 7;
-						.resumo {
-							opacity: 1;
-							transition: opacity .25s ease .25s;
-							overflow: scroll;
-						}
-						span {
-							opacity: 0;
-							transition: opacity .25s ease;
-						}
+			.info {
+				width: 48px;
+				border-right: 1px solid $branco;
+				transition: width .25s ease;
+				position: absolute;
+				background-color: $preto;
+				height: calc(100% - 144px);
+				z-index: 2;
+				top: 72px;
+				&:hover {
+					width: 100% / 24 * 7;
+					.resumo {
+						opacity: 1;
+						transition: opacity .25s ease .25s;
+						overflow: scroll;
 					}
 					span {
-						position: absolute;
-						right: 0;
-						top: 50%;
-						transform: translateY(-50%);
-						display: block;
-						text-align: center;
-						width: 48px;
-						color: $branco;
-						font-family: 'Source Code Pro', monospace;
-						font-size: 36px;
-						line-height: 48px;
-						font-weight: 200;
-						transition: opacity .25s ease .25s;
-					}
-					.resumo {
-						margin-left: 100% / 7 * 5;
-						margin-left: 100% / 7 * 1;
-						margin-right: 100% / 7 * 1;
-						height: 100%;
-						overflow: hidden;
 						opacity: 0;
-						transition: opacity .1s ease;
-						h2 {
-							color: $branco;
-							margin-bottom: 24px;
-							font-size: 24px;
-							line-height: 36px;
-							font-weight: 600;
-							margin-top: 48px;
-						}
-						p {
-							font-family: 'Source Sans Pro', sans-serif;
-							font-weight: 300;
-							font-size: 14px;
-							line-height: 24px;
-							margin-bottom: 24px;
-						}
+						transition: opacity .25s ease;
 					}
 				}
-				.projeto {
-					padding-left: 48px;
-					width: 100%;
+				span {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					display: block;
+					text-align: center;
+					width: 48px;
+					color: $branco;
+					font-family: 'Source Code Pro', monospace;
+					font-size: 36px;
+					line-height: 48px;
+					font-weight: 200;
+					transition: opacity .25s ease .25s;
+				}
+				.resumo {
+					margin-left: 100% / 7 * 5;
+					margin-left: 100% / 7 * 1;
+					margin-right: 100% / 7 * 1;
+					height: 100%;
+					overflow: hidden;
+					opacity: 0;
+					transition: opacity .1s ease;
+					h2 {
+						color: $branco;
+						margin-bottom: 24px;
+						font-size: 24px;
+						line-height: 36px;
+						font-weight: 600;
+						margin-top: 48px;
+					}
+					p {
+						font-family: 'Source Sans Pro', sans-serif;
+						font-weight: 300;
+						font-size: 14px;
+						line-height: 24px;
+						margin-bottom: 24px;
+					}
+				}
+			}
+			.slide {
+				&.capa {
 					h1 {
 						color: $branco;
 						font-size: 96px;
 						line-height: 120px;
 						font-weight: 300;
-						margin-left: calc(#{100% / 24 * 2} - 48px);
-						margin-top: 72px;
+						margin-left: 100% / 24 * 2;						
 					}
+					.categoria {
+						margin-left: 100% / 24 * 2;
+						margin-top: 72px;
+						font-family: 'Source Code Pro', monospace;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+						font-weight: 300;
+						font-size: 24px;
+						line-height: 36px;
+						margin-bottom: 24px;
+					}
+				}
+				&.dois {
+					.conteudo {
+						background-color: $indigo;
+					}
+				}
+				&.tres {
+					.conteudo {
+						background-color: $branco;
+					}
+				}
+				.conteudo {
+					height: 100%;
 				}
 			}
 		}
@@ -193,6 +219,39 @@ body {
 				display: inline-flex;
 				line-height: 72px;
 				cursor: pointer;
+			}
+		}
+		.social {
+			position: absolute;
+			right: 24px;
+			top: 24px;
+			display: flex;
+			flex-flow: row nowrap;
+			@include media-breakpoint-up(md) {
+				right: 48px;
+			}
+			@include media-breakpoint-up(xl) {
+				right: 72px;
+			}
+			.icone {
+				display: flex;
+				align-items: center;
+				fill: $branco;
+				height: 24px;
+				margin-right: 24px;
+				&:last-child {
+					margin-right: 0;
+				}
+				svg {
+					height: 24px;
+					width: auto;
+					display: block;
+				}
+				&.behance {
+					svg {
+						height: 20px;
+					}
+				}
 			}
 		}
 		section.contato {

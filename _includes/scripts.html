@@ -5,4 +5,33 @@
 	$('footer section.contato .fechar').click(function(){
 		$('footer').removeClass('contato');
 	})
+	$('section.projetos .categorias .categoria').click(function(){
+		$('section.projetos .categorias .categoria.selecionado').removeClass('selecionado');
+		$(this).addClass('selecionado');
+	})
+</script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		fullpageInit();
+
+		function fullpageInit(){
+			$('#fullpage').fullpage({
+				slideSelector: '.slide',
+				controlArrows: false,
+				verticalCentered: false,
+				loopHorizontal: false,
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+				},
+
+				afterLoad: function(anchorLink, index){
+				},
+				onLeave: function(index, nextIndex, direction){
+				}
+			});
+		};
+	});
+
 </script>
