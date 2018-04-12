@@ -8,9 +8,225 @@ body {
 	main {
 		height: 100%;
 		.capa {
-			height: 100%;
+			background-color: $indigo;
+			height: calc(100% - 72px);
 			.row {
 				height: 100%;
+			}
+			.logo {
+				position: absolute;
+				height: 24px;
+				top: 24px;
+				left: 24px;
+				@include media-breakpoint-up(md) {
+					height: 36px;
+					top: 48px;
+					left: 48px;
+				}
+				@include media-breakpoint-up(lg) {
+					height: 48px;
+				}
+				@include media-breakpoint-up(xl) {
+					height: 72px;
+					top: 72px;
+					left: 72px;
+				}
+				svg {
+					height: 100%;
+				}
+			}
+			h1 {
+				color: $branco;
+			}
+		}
+
+		.projetos {
+			height: 100%;
+			padding-bottom: 72px;
+			display: flex;
+			flex-flow: column nowrap;
+			.categorias {
+				border-bottom: 1px solid $branco;
+				height: 48px;
+				@include media-breakpoint-up(md) {
+					height: 72px;
+				}
+				ul {
+					text-align: center;
+				}
+				li {
+					font-family: 'Source Code Pro', monospace;
+					font-size: 14px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					display: inline-flex;
+					line-height: 48px;
+					padding-left: 24px;
+					padding-right: 24px;
+					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, #fff 80%);
+					background-position: left;
+					background-size: 1px 5px;
+					background-repeat: repeat-y;
+					color: rgba($branco, .5);
+					&:first-child {
+						color: rgba($branco, 1);
+						font-weight: 900;
+						background-image: none;
+					}
+					@include media-breakpoint-up(md) {
+						line-height: 72px;
+					}
+				}
+			}
+			.conteudo {
+				height: 100%;
+				display: flex;
+				flex-flow: row nowrap;
+				.info {
+					width: 48px;
+					border-right: 1px solid $branco;
+					transition: width .25s ease;
+					position: absolute;
+					background-color: $preto;
+					height: calc(100% - 72px);
+					&:hover {
+						width: 100% / 24 * 7;
+						.resumo {
+							opacity: 1;
+							transition: opacity .25s ease .25s;
+							overflow: scroll;
+						}
+						span {
+							opacity: 0;
+							transition: opacity .25s ease;
+						}
+					}
+					span {
+						position: absolute;
+						right: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						display: block;
+						text-align: center;
+						width: 48px;
+						color: $branco;
+						font-family: 'Source Code Pro', monospace;
+						font-size: 36px;
+						line-height: 48px;
+						font-weight: 200;
+						transition: opacity .25s ease .25s;
+					}
+					.resumo {
+						margin-left: 100% / 7 * 5;
+						margin-left: 100% / 7 * 1;
+						margin-right: 100% / 7 * 1;
+						height: 100%;
+						overflow: hidden;
+						opacity: 0;
+						transition: opacity .1s ease;
+						h2 {
+							color: $branco;
+							margin-bottom: 24px;
+							font-size: 24px;
+							line-height: 36px;
+							font-weight: 600;
+							margin-top: 48px;
+						}
+						p {
+							font-family: 'Source Sans Pro', sans-serif;
+							font-weight: 300;
+							font-size: 14px;
+							line-height: 24px;
+							margin-bottom: 24px;
+						}
+					}
+				}
+				.projeto {
+					padding-left: 48px;
+					width: 100%;
+					h1 {
+						color: $branco;
+						font-size: 96px;
+						line-height: 120px;
+						font-weight: 300;
+						margin-left: calc(#{100% / 24 * 2} - 48px);
+						margin-top: 72px;
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		width: 100%;
+		background-color: $indigo;
+		border-top: 1px solid $branco;
+		height: 72px;
+		position: fixed;
+		bottom: 0;
+		&.contato {
+			section.contato {
+				height: calc(100vh - 72px);
+			}
+		}
+		.menu {
+			position: absolute;
+			left: 24px;
+			@include media-breakpoint-up(md) {
+				left: 48px;
+			}
+			@include media-breakpoint-up(xl) {
+				left: 72px;
+			}
+			li {
+				font-family: 'Source Code Pro', monospace;
+				white-space: pre;
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				word-spacing: 1px;
+				display: inline-flex;
+				line-height: 72px;
+				cursor: pointer;
+			}
+		}
+		section.contato {
+			transition: all .5s ease;
+			width: 100%;
+			height: 0;
+			position: absolute;
+			bottom: 72px;
+			background-color: $indigo;
+			border-top: 1px solid $branco;
+			overflow: hidden;
+			.fechar {
+				width: 36px;
+				position: absolute;
+				top: 24px;
+				left: 24px;
+				cursor: pointer;
+				@include media-breakpoint-up(md) {
+					top: 48px;
+					left: 48px;
+				}
+				@include media-breakpoint-up(xl) {
+					top: 72px;
+					left: 72px;
+				}
+			}
+			h1 {
+				color: $branco;
+				margin-bottom: 24px;
+				margin-top: 120px;
+			}
+			.info {
+				p {
+					font-family: 'Source Sans Pro', sans-serif;
+					font-weight: 300;
+					font-size: 24px;
+					line-height: 36px;
+					margin-bottom: 24px;
+				}
 			}
 		}
 	}
@@ -27,12 +243,16 @@ body {
 			opacity: 1;
 		}
 	}
+	.column:nth-child(2n+1) {
+		div {
+			background-color: rgba(#ff0000, .15);
+		}
+	}
 	.column {
 		opacity: 0;
 		transition: opacity .15s linear;
 		div {
 			height: 100vh;
-			background-color: rgba(#ff0000, .15);
 		}
 	}
 	.botao {

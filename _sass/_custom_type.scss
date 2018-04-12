@@ -1,22 +1,26 @@
 // Custom GC Typography
 
 @mixin titulo-1 {
-    font-family: "nimbus-sans", "Helvetica", sans-serif;
-    font-size: 60px;
-    line-height: 60px;
-    font-weight: 900;
+    font-family: "alverata", "Helvetica", sans-serif;
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 300;
     margin-bottom: 0;
-    @include media-breakpoint-up(lg) {
-        font-size: 90px;
-        line-height: 90px;
+    @include media-breakpoint-up(md) {
+        font-size: 48px;
+        line-height: 72px;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 72px;
+        line-height: 96px;
     }
 }
 
 @mixin titulo-2 {
-	font-family: "nimbus-sans", "Helvetica", sans-serif;
+	font-family: "alverata", "Helvetica", sans-serif;
     font-size: 25px;
     line-height: 30px;
-    font-weight: 900;
+    font-weight: 300;
     margin-bottom: 15px;
     &:last-child {
         margin-bottom: 0;
@@ -28,10 +32,10 @@
 }
 
 @mixin titulo-3 {
-	font-family: "nimbus-sans", "Helvetica", sans-serif;
+	font-family: "alverata", "Helvetica", sans-serif;
     font-size: 25px;
     line-height: 30px;
-    font-weight: 900;
+    font-weight: 300;
     margin-bottom: 0;
     @include media-breakpoint-up(lg) {
         font-size: 40px;
@@ -40,10 +44,10 @@
 }
 
 @mixin titulo-4 {
-	font-family: "nimbus-sans", "Helvetica", sans-serif;
+	font-family: "alverata", "Helvetica", sans-serif;
     font-size: 20px;
     line-height: 25px;
-    font-weight: 900;
+    font-weight: 300;
     margin-bottom: 0;
     @include media-breakpoint-up(lg) {
         font-size: 25px;
@@ -52,7 +56,7 @@
 }
 
 @mixin texto-medio {
-    font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-family: "alverata", "Helvetica", sans-serif;
 	font-size: 20px;
     line-height: 25px;
     font-weight: 400;
@@ -65,7 +69,7 @@
 }
 
 @mixin texto-pequeno {
-    font-family: "nimbus-sans", "Helvetica", sans-serif;
+    font-family: "alverata", "Helvetica", sans-serif;
 	font-size: 16px;
     line-height: 20px;
 	font-weight: 400;
@@ -96,7 +100,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 *::selection {
-    background-color: $preto;
+    background-color: $indigo;
     color: $branco;
 }
 

@@ -8,6 +8,7 @@
 // cores da parabólica
 $branco: #ffffff;
 $preto: #000000;
+$indigo: #60f;
 
 $custom_primary:       $preto !default;
 $custom_secondary:     $preto !default;
@@ -22,7 +23,7 @@ $container-fluid-widths: (
 
 // Set the number of columns and specify the width of the gutters.
 $custom_grid-columns:				$site-grid;
-$custom_grid-gutter-width:          20px;
+$custom_grid-gutter-width:          0px;
 
 // Components
 //
