@@ -55,7 +55,8 @@ body {
 					height: 72px;
 				}
 				ul {
-					text-align: center;
+					display: inline-flex;
+					flex-wrap: wrap;
 				}
 				li {
 					font-family: 'Source Code Pro', monospace;
@@ -72,7 +73,7 @@ body {
 					background-repeat: repeat-y;
 					color: rgba($branco, .5);
 					cursor: pointer;
-					&.selecionado {
+					&.active {
 						color: rgba($branco, 1);
 						font-weight: 900;
 					}
@@ -85,16 +86,17 @@ body {
 				}
 			}
 			.info {
-				width: 48px;
+				width: 100% / 24 * 7;
+				transform: translateX(calc(-100% + 48px));
 				border-right: 1px solid $branco;
-				transition: width .25s ease;
+				transition: transform .25s ease;
 				position: absolute;
 				background-color: $preto;
 				height: calc(100% - 144px);
 				z-index: 2;
 				top: 72px;
 				&:hover {
-					width: 100% / 24 * 7;
+					transform: translateX(0);
 					.resumo {
 						opacity: 1;
 						transition: opacity .25s ease .25s;
