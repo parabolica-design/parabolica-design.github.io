@@ -260,7 +260,7 @@
 				});
 
 				// Resize SLIDEE to fit all items
-				$slidee[0].style[o.horizontal ? 'width' : 'height'] = (borderBox ? slideeSize: slideeSize - paddingStart - paddingEnd) + 'px';
+				$slidee[0].style[o.horizontal ? 'width' : 'height'] = ((borderBox ? slideeSize: slideeSize - paddingStart - paddingEnd ) + 1) + 'px';
 
 				// Adjust internal SLIDEE size for last margin
 				slideeSize -= ignoredMargin;
@@ -1830,7 +1830,7 @@
 			var $movables = $handle;
 			if (!parallax) {
 				$movables = $movables.add($slidee);
-				$frame.css('overflow', 'hidden');
+				//$frame.css('overflow', 'hidden');
 				if (!transform && $frame.css('position') === 'static') {
 					$frame.css('position', 'relative');
 				}
