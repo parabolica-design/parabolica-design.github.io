@@ -1,82 +1,122 @@
-// Custom GC Typography
+// Custom Parabólica Typography
 
 @mixin titulo-1 {
-    font-family: "alverata", "Helvetica", sans-serif;
-    font-size: 22px;
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 300;
+    @include media-breakpoint-up(lg) {
+        font-size: 96px;
+        line-height: 120px;
+    }
+}
+
+@mixin titulo-2 {
+    font-size: 30px;
     line-height: 36px;
     font-weight: 300;
-    margin-bottom: 0;
-    @include media-breakpoint-up(md) {
-        font-size: 48px;
-        line-height: 72px;
-    }
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(lg) {
         font-size: 72px;
         line-height: 96px;
     }
 }
 
-@mixin titulo-2 {
-	font-family: "alverata", "Helvetica", sans-serif;
-    font-size: 25px;
-    line-height: 30px;
-    font-weight: 300;
-    margin-bottom: 15px;
-    &:last-child {
-        margin-bottom: 0;
-    }
-    @include media-breakpoint-up(lg) {
-        font-size: 60px;
-        line-height: 60px;
-    }
-}
-
 @mixin titulo-3 {
-	font-family: "alverata", "Helvetica", sans-serif;
-    font-size: 25px;
-    line-height: 30px;
-    font-weight: 300;
-    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 400;
     @include media-breakpoint-up(lg) {
-        font-size: 40px;
-        line-height: 45px;
+        font-size: 48px;
+        line-height: 72px;
+        font-weight: 300;
     }
 }
 
 @mixin titulo-4 {
-	font-family: "alverata", "Helvetica", sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    @include media-breakpoint-up(lg) {
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 600;
+    }
+}
+
+@mixin titulo-5 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 500;
+    @include media-breakpoint-up(lg) {
+        font-weight: 700;
+    }
+}
+
+@mixin titulo-6 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    @include media-breakpoint-up(lg) {
+        font-weight: 900;
+    }
+}
+
+@mixin texto-grande {
     font-size: 20px;
     line-height: 25px;
     font-weight: 300;
-    margin-bottom: 0;
     @include media-breakpoint-up(lg) {
+        font-weight: 200;
         font-size: 25px;
         line-height: 30px;
     }
 }
 
 @mixin texto-medio {
-    font-family: "alverata", "Helvetica", sans-serif;
 	font-size: 20px;
     line-height: 25px;
-    font-weight: 400;
-    margin-bottom: 0;
+    font-weight: 300;
     @include media-breakpoint-up(lg) {
-        font-weight: 400;
+        font-weight: 300;
         font-size: 25px;
         line-height: 30px;
     }
 }
 
 @mixin texto-pequeno {
-    font-family: "alverata", "Helvetica", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
     line-height: 20px;
-	font-weight: 400;
-    margin-bottom: 0;
+	font-weight: 300;
     @include media-breakpoint-up(lg) {
         font-weight: 300;
     }
+}
+
+* {
+    color: $branco;
+}
+
+*::selection {
+    background-color: $indigo;
+    color: $branco;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .texto-pequeno, .texto-medio, .texto-grande {
+    text-align: left;
+}
+
+h1, .h1, h2, .h2, h3, .h3, .texto-grande {
+    margin-bottom: 24px;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 48px;
+    }
+}
+
+ h4, .h4, h5, .h5, h6, .h6, p, .texto-pequeno, .texto-medio {
+    margin-bottom: 24px;
+ }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: "alverata", "Palatino", serif;
 }
 
 h1, .h1 { @include titulo-1; }
@@ -87,46 +127,35 @@ h3, .h3 { @include titulo-3; }
 
 h4, .h4 { @include titulo-4; }
 
-p, li, .texto-medio { @include texto-medio; }
+h5, .h5 { @include titulo-5; }
 
-.texto-pequeno { @include texto-pequeno; }
+h6, .h6 { @include titulo-6; }
 
-figcaption, input, textarea, .form-control { @include texto-pequeno; }
+p, li, figcaption, input, textarea, blockquote, .texto-pequeno, .texto-medio, .texto-grande {
+    font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
+}
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-	&:first-child {
-    	margin-top: 0
+p, li, figcaption, input, textarea, .texto-pequeno { 
+    @include texto-pequeno;
+}
+
+
+.texto-medio { 
+    @include texto-medio;
+}
+
+blockquote, .texto-grande { 
+    @include texto-grande;
+    & + .texto-grande {
+        margin-top: -12px;
+        @include media-breakpoint-up(lg) {
+            margin-top: -24px;
+        }
     }
-}
-
-*::selection {
-    background-color: $indigo;
-    color: $branco;
-}
-
-h1, .h1 {
-	text-align: left;
-}
-
-h2, .h2, h3, .h3, h4, .h4 {
-	text-align: left;
-}
-
-blockquote, figcaption { 
-	font-style: italic;
-	text-align: center;
 }
 
 figure {
 	background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-p, li {
-    color: $branco;
-}
-
-strong {
-    font-weight: $bold;
 }

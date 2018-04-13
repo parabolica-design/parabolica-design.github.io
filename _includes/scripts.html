@@ -5,10 +5,6 @@
 	$('footer section.contato .fechar').click(function(){
 		$('footer').removeClass('contato');
 	})
-	// $('section.projetos .categorias .categoria').click(function(){
-	// 	$('section.projetos .categorias .categoria.selecionado').removeClass('selecionado');
-	// 	$(this).addClass('selecionado');
-	// })
 </script>
 
 <script type="text/javascript">
@@ -47,7 +43,8 @@
 		startAt: 0,
 		scrollBy: 1,
 		speed: 300,
-		elasticBounds: 1
+		elasticBounds: 1,
+		normalScrollElements: '#frame, .element2'
 	};
-	$('#frame').sly(options);
+	$('#categorias').sly(options);
 </script>
