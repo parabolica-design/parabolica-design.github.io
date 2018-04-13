@@ -1,10 +1,13 @@
 <script type="text/javascript">
+
 	$('footer li.contato').click(function(){
 		$('footer').toggleClass('contato');
 	})
+
 	$('footer section.contato .fechar').click(function(){
 		$('footer').removeClass('contato');
 	})
+
 </script>
 
 <script type="text/javascript">
@@ -29,6 +32,34 @@
 				}
 			});
 		};
+	});
+
+	$('#para-identidade').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'lanp');
+	});
+
+	$('#para-digital').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'pomb');
+	})
+
+	$('#para-motion').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'a-casa');
+	});
+
+	$('#para-audiovisual').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'mr-brownie');
+	})
+
+	$('#para-editorial').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'redes');
+	});
+
+	$('#para-ilustracao').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'gg12');
+	})
+
+	$('#para-tipografia').click(function(){
+		$.fn.fullpage.moveTo('projetos', 'cachalotes');
 	});
 
 </script>
