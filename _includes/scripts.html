@@ -25,9 +25,20 @@
 				normalScrollElements: '#categorias, #info',
 				animateAnchor: false,
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
-					if(slideAnchor == 'pomb') {
-						console.log('muda!');
-						sly.activatePage(0, false)
+					if($('.fp-section.active').find('.fp-slide.active').data("category") == "identidade") {
+						sly.activatePage(0, false)						
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "digital") {
+						sly.activatePage(1, false)
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "motion") {
+						sly.activatePage(2, false)						
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "audiovisual") {
+						sly.activatePage(3, false)						
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "editorial") {
+						sly.activatePage(4, false)						
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "ilustracao") {
+						sly.activatePage(5, false)						
+					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "tipografia") {
+						sly.activatePage(6, false)						
 					}
 				},
 
@@ -85,5 +96,5 @@
 	};
 
 	var sly = new Sly('#categorias', options, {}).init();
-	
+
 </script>
