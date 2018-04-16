@@ -26,22 +26,21 @@
 				animateAnchor: false,
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
 					if($('.fp-section.active').find('.fp-slide.active').data("category") == "identidade") {
-						sly.activatePage(0, false)						
+						sly.activate(0, false)						
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "digital") {
-						sly.activatePage(1, false)
+						sly.activate(1, false)
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "motion") {
-						sly.activatePage(2, false)						
+						sly.activate(2, false)						
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "audiovisual") {
-						sly.activatePage(3, false)						
+						sly.activate(3, false)						
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "editorial") {
-						sly.activatePage(4, false)						
+						sly.activate(4, false)						
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "ilustracao") {
-						sly.activatePage(5, false)						
+						sly.activate(5, false)						
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "tipografia") {
-						sly.activatePage(6, false)						
+						sly.activate(6, false)						
 					}
 				},
-
 				afterLoad: function(anchorLink, index){
 				},
 				onLeave: function(index, nextIndex, direction){
