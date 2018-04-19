@@ -6,6 +6,14 @@ html, body {
 
 body {
 	main {
+		.seta-grande {
+			width: 24px;
+			height: 48px;
+			polyline {
+				fill: none;
+				stroke: $branco;
+			}
+		}
 		height: 100%;
 		.fp-scroller {
 			height: 100%;
@@ -38,6 +46,18 @@ body {
 					height: 100%;
 				}
 			}
+			.proxima {
+				position: absolute;
+				bottom: 120px;
+				left: 60px;
+				transform: rotate(90deg);
+				cursor: pointer;
+				opacity: .75;
+				transition: opacity .25s ease;
+				&:hover {
+					opacity: 1;
+				}
+			}
 		}
 
 		.projetos {
@@ -45,6 +65,7 @@ body {
 			padding-bottom: 72px;
 			display: flex;
 			flex-flow: column nowrap;
+
 			#categorias {
 				border-bottom: 1px solid $branco;
 				height: 72px;
@@ -106,6 +127,30 @@ body {
 					}
 				}
 			}
+
+			.next-slide, .prev-slide {
+				position: absolute;
+				bottom: 120px;
+				cursor: pointer;
+				opacity: .75;
+				transition: opacity .15s ease;
+				z-index: 2;
+				&:hover {
+					opacity: 1;
+				}
+				&.hidden {
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+			.next-slide {
+				right: 48px;
+			}
+			.prev-slide {
+				left: 96px;
+				transform: rotate(180deg);
+			}
+
 			#info {
 				width: 100% / 24 * 7;
 				transform: translateX(calc(-100% + 48px));
@@ -114,7 +159,7 @@ body {
 				position: absolute;
 				background-color: $preto;
 				height: calc(100% - 144px);
-				z-index: 2;
+				z-index: 3;
 				top: 72px;
 				&:hover {
 					transform: translateX(0);
@@ -197,14 +242,14 @@ body {
 		height: 72px;
 		position: fixed;
 		bottom: 0;
-		transition: all .5s ease;
+		transition: all .4s ease;
 		&.contato {
 			height: 100%;
 			section.contato {
 				height: calc(100% - 70px);
 				.conteudo {
 					opacity: 1;
-					transition: opacity .1s ease .5s;
+					transition: opacity .1s ease .4s;
 				}
 			}
 		}
@@ -264,7 +309,7 @@ body {
 			}
 		}
 		section.contato {
-			transition: all .5s ease .1s;
+			transition: all .4s ease .1s;
 			width: 100%;
 			height: 0;
 			position: absolute;

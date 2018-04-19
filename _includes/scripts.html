@@ -14,6 +14,8 @@
 
 	$(document).ready(function() {
 
+		var pageCount = $('section.projetos > .slide').length;
+
 		fullpageInit();
 
 		function fullpageInit(){
@@ -41,13 +43,36 @@
 					} else if ($('.fp-section.active').find('.fp-slide.active').data("category") == "tipografia") {
 						sly.activate(6, false)						
 					}
+					if (slideIndex == 0 && !($('.projetos .prev-slide').hasClass('hidden'))) {
+						$('.projetos .prev-slide').addClass('hidden');
+					} else if (slideIndex > 0)  {
+						$('.projetos .prev-slide').removeClass('hidden');
+					}
+					if (slideIndex == (pageCount - 1) && !($('.projetos .next-slide').hasClass('hidden'))) {
+						$('.projetos .next-slide').addClass('hidden');
+					} else {
+						$('.projetos .next-slide').removeClass('hidden');
+					}
 				},
 				afterLoad: function(anchorLink, index){
+					
 				},
 				onLeave: function(index, nextIndex, direction){
 				}
 			});
 		};
+	});
+
+	$('.prev-slide').click(function(){
+		$.fn.fullpage.moveSlideLeft();
+	});
+
+	$('.next-slide').click(function(){
+		$.fn.fullpage.moveSlideRight();
+	});
+
+	$('.next-section').click(function(){
+		$.fn.fullpage.moveSectionDown();
 	});
 
 	$('#para-identidade').click(function(){
