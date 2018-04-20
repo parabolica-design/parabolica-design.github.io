@@ -63,6 +63,21 @@
 		};
 	});
 
+	var i = null;
+
+	function showControls(event, element) {
+	    clearTimeout(i);
+	    element.classList.remove('standby');
+	    i = setTimeout(function () {
+	        element.classList.add('standby');
+	    }, 3000);
+	}
+
+	function hideControls(event, element) {
+	    clearTimeout(i);
+	    element.classList.add('standby');
+	};
+
 	$('.prev-slide').click(function(){
 		$.fn.fullpage.moveSlideLeft();
 	});
