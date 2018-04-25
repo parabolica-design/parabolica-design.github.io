@@ -252,7 +252,7 @@ body {
 			}
 
 			#info {
-				width: 100% / 24 * 7;
+				width: 100% / 24 * 8;
 				transform: translateX(calc(-100% + 48px));
 				border-right: 1px solid $branco;
 				transition: transform .25s ease;
@@ -289,15 +289,16 @@ body {
 					transition: opacity .25s ease .25s;
 				}
 				.resumo {
-					margin-left: 100% / 7 * 5;
-					margin-left: 100% / 7 * 1;
-					margin-right: 100% / 7 * 1;
+					margin-left: 100% / 8 * 5;
+					margin-left: 100% / 8 * 1;
+					margin-right: 100% / 8 * 1;
 					height: 100%;
 					overflow: hidden;
 					opacity: 0;
 					transition: opacity .1s ease;
 					h2 {
 						margin-top: 48px;
+						margin-bottom: 48px;
 					}
 				}
 			}

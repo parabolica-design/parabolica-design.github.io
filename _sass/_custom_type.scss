@@ -80,18 +80,18 @@
 }
 
 @mixin texto-medio {
-	font-size: 20px;
+	font-size: 18px;
     line-height: 25px;
     font-weight: 300;
     @include media-breakpoint-up(lg) {
         font-weight: 300;
-        font-size: 25px;
+        font-size: 22px;
         line-height: 30px;
     }
 }
 
 @mixin texto-pequeno {
-	font-size: 14px;
+	font-size: 12px;
     line-height: 20px;
 	font-weight: 300;
     @include media-breakpoint-up(lg) {
@@ -121,6 +121,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .texto-pequeno, .texto-
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: "alverata", "Palatino", serif;
+    margin-bottom: 24px;
+    @include media-breakpoint-up(lg) {
+         margin-bottom: 48px;
+    }
 }
 
 h1, .h1 { @include titulo-1; }
@@ -136,7 +140,8 @@ h5, .h5 { @include titulo-5; }
 h6, .h6 { @include titulo-6; }
 
 p, li, figcaption, input, textarea, blockquote, .texto-pequeno, .texto-medio, .texto-grande {
-    font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
+    //font-family: "Source Sans Pro", "Trebuchet MS", sans-serif;
+    font-family: "Source Code Pro", "Trebuchet MS", sans-serif;
 }
 
 p, li, figcaption, input, textarea, .texto-pequeno { 
