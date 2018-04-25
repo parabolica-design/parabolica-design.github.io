@@ -220,7 +220,7 @@ body {
 				position: absolute;
 				bottom: 72px;
 				left: 0;
-				background-color: $preto;
+				background-color: rgba($preto, .9);
 				transition: height .25s ease;
 				overflow: hidden;
 				//border-top: 1px solid $branco;
