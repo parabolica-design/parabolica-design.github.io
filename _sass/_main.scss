@@ -92,11 +92,11 @@ body {
 
 			#categorias {
 				border-bottom: 1px solid $branco;
-				height: 48px;
+				height: 72px;
 				text-align: center;
 				position: absolute;
 			    top: 0;
-			    width: 100%;
+			    width: calc(100% - 48px);
 			    background-color: $preto;
 			    z-index: 2;
 				@include media-breakpoint-up(md) {
@@ -104,6 +104,7 @@ body {
 					padding-right: 48px;
 				}
 				@include media-breakpoint-up(lg) {
+					width: 100%;
 					height: 72px;
 					padding-left: 0;
 					padding-right: 0;
@@ -142,7 +143,7 @@ body {
 					text-transform: uppercase;
 					letter-spacing: 1px;
 					display: inline-flex;
-					line-height: 48px;
+					line-height: 72px;
 					padding-left: 24px;
 					padding-right: 24px;
 					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, #fff 80%);
@@ -215,7 +216,7 @@ body {
 			#info-mobile {
 				height: 72px;
 				width: 100%;
-				padding-right: 72px;
+				//padding-right: 72px;
 				position: absolute;
 				bottom: 72px;
 				left: 0;
@@ -224,11 +225,17 @@ body {
 				overflow: hidden;
 				//border-top: 1px solid $branco;
 				z-index: 3;
+				code {
+					position: absolute;
+					top: 0;
+					right: 0;
+					line-height: 72px;
+				}
 				p:last-child {
 					margin-bottom: 24px;
 				}
 				&.aberto {
-					height: calc(100% - 120px);
+					height: calc(100% - 144px);
 					overflow: scroll;
 				}
 				h2 {
@@ -240,11 +247,13 @@ body {
 			#menu-mobile {
 				width: 72px;
 				height: 72px;
-				//border-left: 1px solid $branco;
+				border-left: 1px solid $branco;
+				border-bottom: 1px solid $branco;
 				position: absolute;
-				bottom: 72px;
+				top: 0;
 				right: 0;
 				z-index: 4;
+				background-color: $preto;
 				.galeria {
 					width: 48px;
 					height: 48px;
@@ -337,7 +346,7 @@ body {
 				}
 				.conteudo {
 					height: 100%;
-					padding-top: 48px;
+					padding-top: 72px;
 					padding-bottom: 144px;
 					display: flex;
 				    flex-flow: column wrap;
