@@ -216,27 +216,54 @@ body {
 			#info-mobile {
 				height: 72px;
 				width: 100%;
-				//padding-right: 72px;
 				position: absolute;
-				bottom: 72px;
+				bottom: 71px;
 				left: 0;
 				background-color: rgba($preto, .9);
 				transition: height .25s ease;
 				overflow: hidden;
-				//border-top: 1px solid $branco;
 				z-index: 3;
+				.pb-container {
+					height: calc(100% - 72px);
+				}
+				header {
+					background-image: linear-gradient(to right, #fff 20%, rgba(255, 255, 255, 0) 20%);
+					background-position: bottom;
+					background-size: 5px 1px;
+					background-repeat: repeat-x;
+				}
+				article {
+					padding-top: 24px;
+					height: 100%;
+					p:last-child {
+						margin-bottom: 24px;
+					}
+				}
 				code {
 					position: absolute;
 					top: 0;
 					right: 0;
 					line-height: 72px;
-				}
-				p:last-child {
-					margin-bottom: 24px;
+					&::before {
+						display: inline;
+						content: '+';
+						position: absolute;
+						left: -10px;
+					}
 				}
 				&.aberto {
-					height: calc(100% - 144px);
-					overflow: scroll;
+					height: calc(100% - 143px);
+					article {
+						overflow: scroll;
+					}
+					code {
+						&::before {
+							display: inline;
+							content: '-';
+							position: absolute;
+							left: -10px;
+						}
+					}
 				}
 				h2 {
 					line-height: 72px;
