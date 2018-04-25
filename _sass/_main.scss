@@ -219,8 +219,12 @@ body {
 				bottom: 72px;
 				left: 0;
 				background-color: $preto;
+				transition: height .25s ease;
 				//border-top: 1px solid $branco;
-				z-index: 2;
+				z-index: 3;
+				&.aberto {
+					height: calc(100% - 120px);
+				}
 				h2 {
 					line-height: 72px;
 					margin-bottom: 0;

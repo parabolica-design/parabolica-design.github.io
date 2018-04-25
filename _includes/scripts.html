@@ -78,6 +78,10 @@
 	    element.classList.add('standby');
 	};
 
+	$('#menu-mobile').click(function(){
+		$(this).toggleClass('aberto');
+	});
+
 	$('.prev-slide').click(function(){
 		$.fn.fullpage.moveSlideLeft();
 	});
