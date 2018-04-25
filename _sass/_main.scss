@@ -473,15 +473,15 @@ body {
 				width: 36px;
 				position: absolute;
 				top: 24px;
-				left: 24px;
+				right: 24px;
 				cursor: pointer;
 				@include media-breakpoint-up(md) {
 					top: 48px;
-					left: 48px;
+					right: 48px;
 				}
 				@include media-breakpoint-up(xl) {
 					top: 72px;
-					left: 72px;
+					right: 72px;
 				}
 			}
 			h1 {
