@@ -407,12 +407,13 @@ body {
 					.img {
 						background-position: top;
 					    background-size: cover;
-					    padding-bottom: 66.666%;
-					    height: 0;
+					    // padding-bottom: 66.666%;
+					    // height: 0;
+					    height: 100%;
 					    width: 100%;
 					    background-repeat: no-repeat;
 					    @include media-breakpoint-up(lg) {
-					    	padding-bottom: 0;
+					    	//padding-bottom: 0;
 					    	height: 100%;
 					    	display: flex;
 						    flex-flow: column wrap;
