@@ -4,6 +4,10 @@
 		$('footer').toggleClass('contato');
 	})
 
+	$('#menu-mobile').click(function(){
+		$('#galeria').toggleClass('aberto');
+	})
+
 	$('footer section.contato .fechar').click(function(){
 		$('footer').removeClass('contato');
 	})
@@ -24,7 +28,7 @@
 				controlArrows: false,
 				verticalCentered: false,
 				loopHorizontal: false,
-				normalScrollElements: '#categorias, #info, #info-mobile',
+				normalScrollElements: '#categorias, #info, #info-mobile, #contato',
 				animateAnchor: false,
 				scrollingSpeed: 400,
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
@@ -58,6 +62,7 @@
 					
 				},
 				onLeave: function(index, nextIndex, direction){
+					$('#info-mobile').removeClass('aberto');
 				}
 			});
 		};

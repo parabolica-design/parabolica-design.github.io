@@ -2,10 +2,14 @@
 
 // Creates fluid containers with responsive percentage based widths
 @mixin make-fluid-container($widths: $container-fluid-widths, $breakpoints: $grid-breakpoints) {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  box-sizing: border-box;
+	width: 100%;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	box-sizing: border-box;
+	@include media-breakpoint-up(md) {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
