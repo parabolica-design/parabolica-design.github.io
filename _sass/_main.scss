@@ -212,41 +212,48 @@ body {
 				}
 			}
 
-			#menu-mobile {
+			#info-mobile {
 				height: 72px;
 				width: 100%;
+				padding-right: 72px;
 				position: absolute;
 				bottom: 72px;
 				left: 0;
 				background-color: $preto;
 				transition: height .25s ease;
+				overflow: hidden;
 				//border-top: 1px solid $branco;
 				z-index: 3;
+				p:last-child {
+					margin-bottom: 24px;
+				}
 				&.aberto {
 					height: calc(100% - 120px);
+					overflow: scroll;
 				}
 				h2 {
 					line-height: 72px;
 					margin-bottom: 0;
-					padding-right: 72px;
 				}
-				.botao {
-					width: 72px;
-					height: 72px;
-					//border-left: 1px solid $branco;
+			}
+
+			#menu-mobile {
+				width: 72px;
+				height: 72px;
+				//border-left: 1px solid $branco;
+				position: absolute;
+				bottom: 72px;
+				right: 0;
+				z-index: 4;
+				.galeria {
+					width: 48px;
+					height: 48px;
 					position: absolute;
-					top: 0;
-					right: 0;
-					.galeria {
-						width: 48px;
-						height: 48px;
-						position: absolute;
-						top: 12px;
-						left: 12px;
-						line {
-							stroke-width: 2px;
-							stroke: $branco;
-						}
+					top: 12px;
+					left: 12px;
+					line {
+						stroke-width: 2px;
+						stroke: $branco;
 					}
 				}
 			}

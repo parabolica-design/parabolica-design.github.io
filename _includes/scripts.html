@@ -24,7 +24,7 @@
 				controlArrows: false,
 				verticalCentered: false,
 				loopHorizontal: false,
-				normalScrollElements: '#categorias, #info',
+				normalScrollElements: '#categorias, #info, #info-mobile',
 				animateAnchor: false,
 				scrollingSpeed: 400,
 				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
@@ -78,7 +78,7 @@
 	    element.classList.add('standby');
 	};
 
-	$('#menu-mobile').click(function(){
+	$('#info-mobile').click(function(){
 		$(this).toggleClass('aberto');
 	});
 
