@@ -143,6 +143,11 @@ p, li, figcaption, input, textarea, .texto-pequeno {
     @include texto-pequeno;
 }
 
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+}
+
 
 .texto-medio { 
     @include texto-medio;

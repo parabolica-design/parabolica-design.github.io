@@ -9,17 +9,25 @@ body {
 		.seta-grande {
 			width: 24px;
 			height: 48px;
+			overflow: visible;
 			polyline {
 				fill: none;
 				stroke: $branco;
+				stroke-width: 2px;
 			}
 		}
 		.seta-pequena {
-			width: 12px;
-			height: 24px;
+			width: 8px;
+			height: 16px;
+			overflow: visible;
+			@include media-breakpoint-up(md) {
+				width: 12px;
+				height: 24px;
+			}
 			polyline {
 				fill: none;
 				stroke: $branco;
+				stroke-width: 2px;
 			}
 		}
 		height: 100%;
@@ -70,10 +78,11 @@ body {
 
 		.projetos {
 			height: 100%;
-			padding-bottom: 72px;
+			//padding-bottom: 72px;
+			//padding-top: 72px;
 			display: flex;
 			flex-flow: column nowrap;
-			@include media-breakpoint-up(md) {
+			@include media-breakpoint-up(lg) {
 				&.standby {
 					.next-slide, .prev-slide {
 						opacity: 0.15;
@@ -83,15 +92,19 @@ body {
 
 			#categorias {
 				border-bottom: 1px solid $branco;
-				height: 72px;
+				height: 48px;
 				text-align: center;
-				padding-left: 20px;
-				padding-right: 20px;
+				position: absolute;
+			    top: 0;
+			    width: 100%;
+			    background-color: $preto;
+			    z-index: 2;
 				@include media-breakpoint-up(md) {
 					padding-left: 48px;
 					padding-right: 48px;
 				}
 				@include media-breakpoint-up(lg) {
+					height: 72px;
 					padding-left: 0;
 					padding-right: 0;
 				}
@@ -118,22 +131,28 @@ body {
 					display: inline-flex;
 					flex-wrap: wrap;
 				}
+				li, li span {
+					white-space: pre;
+					color: rgba($branco, .5);
+					cursor: pointer;
+				}
 				li {
 					font-family: 'Source Code Pro', monospace;
 					font-size: 14px;
 					text-transform: uppercase;
 					letter-spacing: 1px;
 					display: inline-flex;
-					line-height: 72px;
+					line-height: 48px;
 					padding-left: 24px;
 					padding-right: 24px;
 					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, #fff 80%);
 					background-position: left;
 					background-size: 1px 5px;
 					background-repeat: repeat-y;
-					color: rgba($branco, .5);
-					cursor: pointer;
-					&.active {
+					@include media-breakpoint-up(lg) {
+						line-height: 72px;
+					}
+					&.active, &.active span {
 						color: rgba($branco, 1);
 						font-weight: 900;
 					}
@@ -145,22 +164,34 @@ body {
 
 			.next-slide, .prev-slide {
 				position: absolute;
-				bottom: 72px;
+				bottom: 50%;
 				cursor: pointer;
 				transition: opacity .15s ease;
 				z-index: 2;
-				width: 72px;
-				height: 72px;
+				width: 36px;
+				height: 36px;
 				background-color: $preto;
+				opacity: .35;
+				transform: translateY(-50%);
+				@include media-breakpoint-up(md) {
+					width: 72px;
+					height: 72px;
+				}
+				@include media-breakpoint-up(lg) {
+					opacity: 1;
+					bottom: 72px;
+					transform: translateY(0);
+				}
     			svg {
 					fill: none;
 					stroke: $branco;
 					position: absolute;
-				    top: 24px;
-				    left: 30px;
-				}
-				&:hover {
-					opacity: 1;
+				    top: 12px;
+				    left: 15px;
+				    @include media-breakpoint-up(md) {
+				    	top: 24px;
+				    	left: 30px;
+				    }
 				}
 				&.hidden {
 					opacity: 0;
@@ -171,10 +202,48 @@ body {
 				right: 0px;
 			}
 			.prev-slide {
-				left: 48px;
+				left: 0;
+				@include media-breakpoint-up(lg) {
+					left: 48px;
+				}
 				svg {
 					transform: rotate(180deg);
 					transform-origin: center;
+				}
+			}
+
+			#menu-mobile {
+				height: 72px;
+				width: 100%;
+				position: absolute;
+				bottom: 72px;
+				left: 0;
+				background-color: $preto;
+				//border-top: 1px solid $branco;
+				z-index: 2;
+				h2 {
+					line-height: 72px;
+					margin-bottom: 0;
+					padding-right: 72px;
+				}
+				.botao {
+					width: 72px;
+					height: 72px;
+					//border-left: 1px solid $branco;
+					position: absolute;
+					top: 0;
+					right: 0;
+					.galeria {
+						width: 48px;
+						height: 48px;
+						position: absolute;
+						top: 12px;
+						left: 12px;
+						line {
+							stroke-width: 2px;
+							stroke: $branco;
+						}
+					}
 				}
 			}
 
@@ -235,7 +304,6 @@ body {
 					}
 					.categoria {
 						margin-left: 100% / 24 * 2;
-						margin-top: 72px;
 						font-family: 'Source Code Pro', monospace;
 						text-transform: uppercase;
 						letter-spacing: 2px;
@@ -247,16 +315,49 @@ body {
 				}
 				&.dois {
 					.conteudo {
-						background-color: $indigo;
+						//background-color: $indigo;
 					}
 				}
 				&.tres {
 					.conteudo {
-						background-color: $branco;
+						//background-color: $branco;
 					}
 				}
 				.conteudo {
 					height: 100%;
+					padding-top: 48px;
+					padding-bottom: 144px;
+					display: flex;
+				    flex-flow: column wrap;
+				    align-content: stretch;
+				    justify-content: center;
+				    align-items: flex-start;
+					@include media-breakpoint-down(md) {
+						.categoria, h1 {
+					    	display: none;
+					    }
+					}
+					@include media-breakpoint-up(lg) {
+						padding-top: 72px;
+						padding-bottom: 72px;
+					}
+					.img {
+						background-position: top;
+					    background-size: cover;
+					    padding-bottom: 66.666%;
+					    height: 0;
+					    width: 100%;
+					    background-repeat: no-repeat;
+					    @include media-breakpoint-up(lg) {
+					    	 padding-bottom: 0;
+					    	 height: 100%;
+					    	 display: flex;
+						    flex-flow: column wrap;
+						    align-content: stretch;
+						    justify-content: center;
+						    align-items: flex-start;
+					    }
+					}
 				}
 			}
 		}
