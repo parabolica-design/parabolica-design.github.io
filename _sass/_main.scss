@@ -234,13 +234,14 @@ body {
 				background-color: rgba($preto, .9);
 				transition: height .25s ease;
 				overflow: hidden;
-				z-index: 3;
+				z-index: 5;
 				header {
 					background-image: linear-gradient(to right, #fff 20%, rgba(255, 255, 255, 0) 20%);
 					background-position: bottom;
 					background-size: 5px 1px;
 					background-repeat: repeat-x;
 					height: 72px;
+					background-color: $preto;
 				}
 				article {
 					height: calc(100% - 72px);
@@ -265,7 +266,7 @@ body {
 					}
 				}
 				&.aberto {
-					height: calc(100% - 143px);
+					height: calc(100% - 71px);
 					article {
 						overflow: scroll;
 					}
