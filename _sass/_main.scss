@@ -294,7 +294,7 @@ body {
 				position: absolute;
 				top: 0;
 				right: 0;
-				z-index: 4;
+				z-index: 6;
 				background-color: $preto;
 				cursor: pointer;
 				.galeria {
@@ -429,10 +429,10 @@ body {
 			#galeria {
 			    height: calc(100% - 72px);
 			    position: absolute;
-			    top: 72px;
+			    top: 0;
 			    width: 100%;
 			    background-color: black;
-			    z-index: 3;
+			    z-index: 5;
 			    opacity: 0;
 			    transition: opacity .1s ease;
 			    pointer-events: none;
