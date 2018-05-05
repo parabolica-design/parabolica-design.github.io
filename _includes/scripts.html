@@ -4,9 +4,9 @@
 		$('footer').toggleClass('contato');
 	})
 
-	$('#menu-mobile').click(function(){
+	$('#menu-mobile .botao').click(function(){
 		$('#galeria').toggleClass('aberto');
-		$(this).toggleClass('aberto');
+		$('#menu-mobile').toggleClass('aberto');
 	})
 
 	$('footer section.contato .fechar').click(function(){
@@ -125,6 +125,24 @@
 
 	$('#para-tipografia').click(function(){
 		$.fn.fullpage.moveTo('projetos', 'cachalotes');
+	});
+
+</script>
+
+<script type="text/javascript">
+
+	$('#formspree').submit(function(){
+		$.ajax({
+			url: 'https://formspree.io/vtrmrx@gmail.com',
+			method: 'POST',
+			data: $('#formspree').serialize(),
+			dataType: 'json',
+			beforeSend: function() { console.log("enviando") },
+			success: function(data) { console.log("sucesso") },
+			error: function(err) { console.log("erro") }
+		});
+		$('#formspree')[0].reset();
+		return false;
 	});
 
 </script>
